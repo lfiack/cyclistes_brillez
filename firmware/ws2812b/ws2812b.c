@@ -7,6 +7,8 @@
 
 #include "ws2812b.h"
 
+#include "main.h"
+
 int ws2812b_init(h_ws2812b_t * h_ws2812b)
 {
 	for (int i = 0 ; i < WS2812B_DATA_LENGTH ; i++)
@@ -55,6 +57,8 @@ int ws2812b_set_led_rgb(h_ws2812b_t * h_ws2812b, uint16_t index, uint8_t red, ui
 
 int ws2812b_send_buffer(h_ws2812b_t * h_ws2812b)
 {
+	HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+
 	if (HAL_TIM_PWM_Start_DMA(h_ws2812b->htim, h_ws2812b->tim_channel, (uint32_t *) h_ws2812b->data, WS2812B_DATA_LENGTH) == HAL_OK)
 	{
 		return 0;

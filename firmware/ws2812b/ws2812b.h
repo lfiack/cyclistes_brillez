@@ -10,7 +10,7 @@
 
 #include "stm32l4xx_hal.h"
 
-#define WS2812B_LED_NUMBER 60
+#define WS2812B_LED_NUMBER 24
 
 #define WS2812B_DATA_LENGTH WS2812B_LED_NUMBER * 24 + 1
 

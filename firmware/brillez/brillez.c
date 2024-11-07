@@ -64,7 +64,7 @@ void chaser_from_center(uint32_t color, uint32_t delay)
 	for (int i = 0 ; i < center ; i++)
 	{
 		ws2812b_set_led_hex(&h_ws2812b, center+i, color);
-		ws2812b_set_led_hex(&h_ws2812b, center-i, color);
+		ws2812b_set_led_hex(&h_ws2812b, center-i-1, color);
 
 		ws2812b_send_buffer(&h_ws2812b);
 
@@ -74,7 +74,7 @@ void chaser_from_center(uint32_t color, uint32_t delay)
 	for (int i = 0 ; i < center ; i++)
 	{
 		ws2812b_set_led_hex(&h_ws2812b, center+i, 0);
-		ws2812b_set_led_hex(&h_ws2812b, center-i, 0);
+		ws2812b_set_led_hex(&h_ws2812b, center-i-1, 0);
 
 		ws2812b_send_buffer(&h_ws2812b);
 

@@ -139,16 +139,16 @@ int main(void)
 			switch(effect)
 			{
 			case 0:
-				chaser_forward(palette[color], 10);
+				chaser_forward(palette[color], 25);
 				break;
 			case 1:
-				chaser_backward(palette[color], 10);
+				chaser_backward(palette[color], 30);
 				break;
 			case 2:
-				chaser_from_center(palette[color], 20);
+				chaser_from_center(palette[color], 50);
 				break;
 			case 3:
-				chaser_to_center(palette[color], 20);
+				chaser_to_center(palette[color], 50);
 				break;
 			case 4:
 				blink(palette[color], 50);
